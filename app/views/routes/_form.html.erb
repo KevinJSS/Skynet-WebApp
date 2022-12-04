@@ -1,0 +1,50 @@
+<%= form_with(model: route) do |form| %>
+  <%= render 'shared/errors', obj: @route %>
+
+  <div class="mb-4">
+    <%= form.label "Producto", style: "display: block" %>
+    <%= form.select :product_id, options_for_select(@products.collect { |p| [p.code, p.id] }), {}, class: "form-select" %>
+  </div>
+
+  <div class="mb-4">
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_area :description, class: "form-control" %>
+  </div>
+
+  <div class="mt-4">
+    <table class="table table-hover ">
+      <thead>
+      <tr>
+        <th class="text-center" scope="col">Operación</th>
+        <th class="text-center" scope="col">Agregar operación</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% if @operations.empty? %>
+        <tr>
+          <td colspan="2" class="text-center">No hay operaciones...<a href="<%= new_operation_path %>"><i>Agregar
+            operación</i></a></td>
+        </tr>
+      <% else %>
+        <% @operations.each do |operation| %>
+          <% if operation.route_id.nil? %>
+            <%= render "/routes/operations_table/table_column", operation: operation %>
+          <% end %>
+        <% end %>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <% unless @operations.empty? %>
+    <div class="d-flex mt-5 align-items-center justify-content-end">
+      <%= link_to "Regresar", routes_path, class: "btn-secundario" %>&nbsp;&nbsp;
+      <%= form.submit "Crear Ruta", class: "btn-primario" %>
+    </div>
+  <% else %>
+    <div class="d-flex mt-5 align-items-center justify-content-end">
+      <%= link_to "Regresar", routes_path, class: "btn-secundario" %>&nbsp;&nbsp;
+    </div>
+  <% end %>
+
+<% end %>

@@ -1,0 +1,14 @@
+<div class="container mt-4 mx-auto">
+  <div style="width: 95%;">
+    <%= render "/shared/messages" %>
+  </div>
+</div>
+
+<%= render @country %>
+
+<div>
+  <%= link_to "Edit this country", edit_country_path(@country) %> |
+  <%= link_to "Back to countries", countries_path %>
+
+  <%= button_to "Destroy this country", @country, method: :delete %>
+</div>

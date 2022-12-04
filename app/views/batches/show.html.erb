@@ -1,0 +1,14 @@
+<div class="container mt-4 mx-auto">
+  <div style="width: 95%;">
+    <%= render "/shared/messages" %>
+  </div>
+</div>
+
+<%= render @batch %>
+
+<div>
+  <%= link_to "Edit this batch", edit_batch_path(@batch) %> |
+  <%= link_to "Back to batches", batches_path %>
+
+  <%= button_to "Destroy this batch", @batch, method: :delete %>
+</div>

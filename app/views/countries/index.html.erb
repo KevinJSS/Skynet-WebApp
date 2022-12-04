@@ -1,0 +1,18 @@
+<div class="container mt-4 mx-auto">
+  <div style="width: 95%;">
+    <%= render "/shared/messages" %>
+  </div>
+</div>
+
+<h1>Countries</h1>
+
+<div id="countries">
+  <% @countries.each do |country| %>
+    <%= render country %>
+    <p>
+      <%= link_to "Show this country", country %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New country", new_country_path %>

@@ -1,0 +1,18 @@
+<div class="container mt-4 mx-auto">
+  <div style="width: 95%;">
+    <%= render "/shared/messages" %>
+  </div>
+</div>
+
+<h1>Operations</h1>
+
+<div id="operations">
+  <% @operations.each do |operation| %>
+    <%= operation.code %>
+    <p>
+      <%= link_to "Show this operation", operation %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New operation", new_operation_path %>

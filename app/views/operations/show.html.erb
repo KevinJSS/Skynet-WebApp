@@ -1,0 +1,23 @@
+<%= render "/shared/navbar" %>
+
+<div class="h-100 w-100 secondary-background">
+  <div class="container mt-5">
+    <div class="container mt-4 mx-auto">
+      <div style="width: 95%;">
+        <%= render "/shared/messages" %>
+      </div>
+    </div>
+
+    <%# -- Titulo de operación -- %>
+    <div class="">
+      <%= image_tag("operation-details-headline.svg", :alt => "details-operation-title", :width => "96%", :class => "mb-5") %>
+    </div>
+    <%# ------------- %>
+
+    <%= render @operation %>
+
+    <div class="d-flex mt-3 pb-5 align-items-center justify-content-end" style="margin-right: 4%;">
+      <%= link_to "Regresar", :back, class: "btn-secundario" %>
+    </div>
+  </div>
+</div>
