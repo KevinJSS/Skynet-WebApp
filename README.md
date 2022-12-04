@@ -46,7 +46,7 @@ Aplicación Web para el manejo de productos, lotes, operaciones y rutas, como pa
 ### Desarrollado con:
 - HTML
 - JavaScript
-- CSS
+- CSS/SCSS
 - Bootstrap 5
 - Ruby 3.1.3
 - Rails 7.0.4
